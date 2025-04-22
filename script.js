@@ -36,6 +36,27 @@ const iter = {
     }
 }
 
+console.log("using for ... of on iter")
 for (const val of iter) {
     console.log(val);
 }
+
+
+function *generator(start, end, step) {
+    for(let i = start; i <= end; i += step){
+        yield i;
+    }
+}
+
+let obj = generator(0,10,2);
+
+console.log('start using generator')
+console.log(obj.next());
+console.log(obj.next());
+console.log(obj.next());
+console.log(obj.next());
+console.log(obj.next());
+console.log(obj.next());
+console.log(obj.next());
+
+
