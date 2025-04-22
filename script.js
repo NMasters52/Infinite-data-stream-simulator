@@ -11,52 +11,57 @@
 // console.log(obj.next());
 // console.log(obj.next());
 
-const iter = {
-    start: 0,
-    end: 10,
-    step: 2,
+// const iter = {
+//     start: 0,
+//     end: 10,
+//     step: 2,
 
-    [Symbol.iterator](){
-        let currentValue = this.start;
-        const that = this;
-        return {
-            next(){
-                if(currentValue <= that.end){
-                    const result = {value: currentValue, done:false};
-                     currentValue += that.step;
-                    return result;
-                } else {
-                    return {value: that.end, done: true};
+//     [Symbol.iterator](){
+//         let currentValue = this.start; 
+//         const that = this; //allowing the next mehtod to have access to the this. in it's scope. Essentially creating a closure.
+//         return {
+//             next(){
+//                 if(currentValue <= that.end){
+//                     const result = {value: currentValue, done:false};
+//                      currentValue += that.step;
+//                     return result;
+//                 } else {
+//                     return {value: that.end, done: true};
 
-                }
+//                 }
                 
                 
-         }
-        }
-    }
-}
+//          }
+//         }
+//     }
+// }
 
-console.log("using for ... of on iter")
-for (const val of iter) {
-    console.log(val);
-}
-
-
-function *generator(start, end, step) {
-    for(let i = start; i <= end; i += step){
-        yield i;
-    }
-}
-
-let obj = generator(0,10,2);
-
-console.log('start using generator')
-console.log(obj.next());
-console.log(obj.next());
-console.log(obj.next());
-console.log(obj.next());
-console.log(obj.next());
-console.log(obj.next());
-console.log(obj.next());
+// console.log("using for ... of on iter")
+// for (const val of iter) {
+//     console.log(val);
+// }
 
 
+// function *generator(start, end, step) {
+//     for(let i = start; i <= end; i += step){
+//         yield i;
+//     }
+// }
+
+// let obj = generator(0,10,2);
+
+// console.log('start using generator')
+// console.log(obj.next());
+// console.log(obj.next());
+// console.log(obj.next());
+// console.log(obj.next());
+// console.log(obj.next());
+// console.log(obj.next());
+// console.log(obj.next());
+
+
+//create data set
+
+//create generator to paginate over data set
+
+//console log to the system to simulate pagination in a realworld scenrio
