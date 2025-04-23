@@ -61,6 +61,8 @@
 
 
 //create data set
+const largeDataSet = Array.from({ length: 100 }, (_, i) => `item ${i}`);
+console.log(largeDataSet)
 
 //create generator to paginate over data set
 
