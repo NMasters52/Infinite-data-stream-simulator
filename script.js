@@ -62,8 +62,18 @@
 
 //create data set
 const largeDataSet = Array.from({ length: 100 }, (_, i) => `item ${i}`);
-console.log(largeDataSet)
 
 //create generator to paginate over data set
+let pageStart = 1;
+const itemsPerPage = 10;
+let offset = (pageStart - 1) * itemsPerPage;
+
+function displayPage() {
+    
+}
+
+function* paginate(){
+ yield displayPage();   
+}
 
 //console log to the system to simulate pagination in a realworld scenrio
