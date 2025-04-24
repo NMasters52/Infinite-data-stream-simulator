@@ -64,16 +64,26 @@
 const largeDataSet = Array.from({ length: 100 }, (_, i) => `item ${i}`);
 
 //create generator to paginate over data set
-let pageStart = 1;
-const itemsPerPage = 10;
-let offset = (pageStart - 1) * itemsPerPage;
+let startIndex = 1;
+const skip = 10;
+let endIndex = skip;
 
-function displayPage() {
-    
+
+function slicedArray() {
+   let dataSet = largeDataSet.slice(startIndex, endIndex);
+   startIndex =+ skip;
+   endIndex =+ skip;
+   return dataSet;
 }
 
 function* paginate(){
- yield displayPage();   
+    yield slicedArray()
+    yield slicedArray()
 }
 
 //console log to the system to simulate pagination in a realworld scenrio
+let iteration = paginate()
+
+console.log(iteration.next())
+console.log(`${startIndex} ${endIndex}`)
+console.log(iteration.next())
